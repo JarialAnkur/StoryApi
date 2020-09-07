@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(userRoute);
 app.use(storyRoute);
-
+const server = http.createServer(app)
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('public'));
